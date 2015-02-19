@@ -1,0 +1,11 @@
+---
+- hosts: [nimbus]
+  vars:
+    storm_nimbus_enabled: true
+    storm_supervisor_enabled: true
+    zookeeper_hosts: 10.240.200.146,10.240.213.132,10.240.4.226
+    nimbus_host: 10.240.200.146
+
+  sudo: True
+  roles:
+    - { role: 'ansible-mesos-storm' }

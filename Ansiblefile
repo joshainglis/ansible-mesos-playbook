@@ -15,3 +15,5 @@ role "ansible-mesos",
   github: "mhamrah/ansible-mesos"
 role "ansible-consul",
   github: "mhamrah/ansible-consul"
+role "ansible-mesos-storm",
+  github: "fullergalway/ansible-mesos-storm"
