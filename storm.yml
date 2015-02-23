@@ -2,4 +2,11 @@
 - hosts: [nimbus]
   sudo: True
   roles:
-    - { role: 'ansible-mesos-storm', storm_nimbus_enabled: true, storm_supervisor_enabled: true, zookeeper_hosts: "{{ groups.mesos_primaries | join(':2181,') }}:2181", nimbus_host: "{{ groups.nimbus[0] }}" }
+    - { role: 'ansible-mesos-storm', storm_nimbus_enabled: true, storm_supervisor_enabled: false, zookeeper_hosts: "{{ groups.mesos_primaries | join(':2181,') }}:2181", nimbus_host: "{{ groups.nimbus[0] }}" }
+- hosts: [mesos_workers]
+  sudo: True
+  tasks:
+    - group: name=storm
+    - user: name=storm group=storm
+    - file: path=/var/log/storm state=directory user=storm group=storm
+    - file: path=/var/storm state=directory user=storm group=storm
