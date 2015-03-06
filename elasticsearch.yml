@@ -1,0 +1,15 @@
+---
+
+#########################
+# Elasticsearch install #
+#########################
+
+- hosts: elasticsearch
+  user: vagrant
+  sudo: yes
+
+  roles:
+    - ansible-elasticsearch
+
+  vars_files:
+    - vars/elasticsearch.yml
