@@ -1,0 +1,5 @@
+---
+- hosts: [influxdb]
+  sudo: True
+  roles:
+    - { role: 'ansible-influxdb' }
