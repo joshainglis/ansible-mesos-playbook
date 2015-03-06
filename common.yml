@@ -11,6 +11,8 @@
         - htop
         - unzip
       when: ansible_os_family == "Debian"
+    - name: set time
+      command: ntpdate -u galwaydcvm
     - name: Downloading and enable the EPEL repository definitions.
       yum: name=http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm state=present
       when: ansible_os_family == "RedHat"
