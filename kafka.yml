@@ -1,0 +1,5 @@
+---
+- hosts: [kafka]
+  sudo: True
+  roles:
+    - { role: 'ansible-kafka', kafka_listen_address: "{{ inventory_hostname }}", kafka_auto_create_topics: "true", zookeeper_hosts: "{{ groups.mesos_primaries | join(':2181,') }}:2181" }
