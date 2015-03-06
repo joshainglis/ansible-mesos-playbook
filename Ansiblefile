@@ -17,3 +17,9 @@ role "ansible-consul",
   github: "mhamrah/ansible-consul"
 role "ansible-mesos-storm",
   github: "fullergalway/ansible-mesos-storm"
+role "ansible-kafka",
+  github: "fullergalway/ansible-kafka"
+role "ansible-influxdb",
+  github: "hpcloud-mon/ansible-influxdb"
+role "ansible-elasticsearch",
+  github: "fullergalway/ansible-elasticsearch"

@@ -1,4 +1,32 @@
 GIT
+  remote: https://github.com/fullergalway/ansible-elasticsearch
+  ref: master
+  sha: 9774142d4af3b048c2052866ccb23ca7f7d64d95
+  specs:
+    ansible-elasticsearch (0.0.0)
+
+GIT
+  remote: https://github.com/fullergalway/ansible-kafka
+  ref: master
+  sha: cf68a0282e4673076d26a983eda14a22f2ce8773
+  specs:
+    ansible-kafka (0.0.0)
+
+GIT
+  remote: https://github.com/fullergalway/ansible-mesos-storm
+  ref: master
+  sha: 98b01e9fa0261b75991cec7830682ab0f97f7981
+  specs:
+    ansible-mesos-storm (0.0.0)
+
+GIT
+  remote: https://github.com/hpcloud-mon/ansible-influxdb
+  ref: master
+  sha: 0732fa0d8415d848e7d61a50ce011eb16b069a13
+  specs:
+    ansible-influxdb (0.0.0)
+
+GIT
   remote: https://github.com/mhamrah/ansible-consul
   ref: master
   sha: 38397d7103f659e9f3944da816d6b8a3b0e26018
@@ -22,14 +50,14 @@ GIT
 GIT
   remote: https://github.com/mhamrah/ansible-marathon
   ref: master
-  sha: e1d8781e4d5f55db7aee91e8cdd39a5cf2813f36
+  sha: 8665893cff8109234b3869c302fac77677afb5ed
   specs:
     ansible-marathon (0.0.0)
 
 GIT
   remote: https://github.com/mhamrah/ansible-mesos
   ref: master
-  sha: 1717eefbdda66f78d41b0aa2fc77facafb2a2b1c
+  sha: 156cf2ae5e4532a03137ff3fbbd2d6fc9c8fb002
   specs:
     ansible-mesos (0.0.0)
 
@@ -43,8 +71,12 @@ GIT
 DEPENDENCIES
   ansible-consul (>= 0)
   ansible-docker (>= 0)
+  ansible-elasticsearch (>= 0)
+  ansible-influxdb (>= 0)
   ansible-java8 (>= 0)
+  ansible-kafka (>= 0)
   ansible-marathon (>= 0)
   ansible-mesos (>= 0)
+  ansible-mesos-storm (>= 0)
   ansible-zookeeper (>= 0)
 
