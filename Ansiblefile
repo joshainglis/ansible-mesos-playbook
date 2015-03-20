@@ -23,3 +23,9 @@ role "ansible-influxdb",
   github: "hpcloud-mon/ansible-influxdb"
 role "ansible-elasticsearch",
   github: "fullergalway/ansible-elasticsearch"
+role "ansible-logstash",
+  github: "fullergalway/logstash-role"
+role "ansible-cassandra",
+  github: "fullergalway/cassandra-ansible-role"
+role "ANXS.oracle-jdk",
+  github: "ANXS/oracle-jdk"

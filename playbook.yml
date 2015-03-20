@@ -6,4 +6,5 @@
 - include: kafka.yml
 - include: elasticsearch.yml
 - include: influxdb.yml
+- include: cassandra.yml
 

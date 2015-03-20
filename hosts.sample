@@ -19,3 +19,7 @@
 
 [elasticsearch]
 10.11.1.21
+
+[cassandra]
+10.11.1.56
+

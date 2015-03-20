@@ -1,0 +1,13 @@
+---
+
+#########################
+# Elasticsearch install #
+#########################
+
+- hosts: [cassandra]
+  user: vagrant
+  sudo: yes
+
+  roles:
+    - { role: 'ansible-cassandra', cassandra_listen_address: "{{ inventory_hostname }}", cassandra_rpc_address: "{{ inventory_hostname }}", cassandra_seeds: "{{ hostvars[groups['cassandra'][0]]['ansible_eth0']['ipv4']['address'] }}", opscenter_listen_address: " {{ inventory_hostname }}", opscenter_port: 8888  }
+
