@@ -19,3 +19,7 @@
     - { role: 'ansible-consul', consul_client_address: "0.0.0.0",  consul_version: "0.4.1", consul_datacenter: "sea", consul_is_server: true, consul_servers: "{{ groups.mesos_primaries  }}", consul_is_ui: true, consul_join_at_start: true }
 
 
+  tasks:
+    - cron: name="zookeeper cleanup" minute=0 hour=4
+            user="root" job="/usr/share/zookeeper/bin/zkCleanup.sh -n 3"
+            cron_file="zkcleanup"
