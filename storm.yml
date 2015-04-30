@@ -7,6 +7,6 @@
   sudo: True
   tasks:
     - group: name=storm
-    - user: name=storm group=storm
-    - file: path=/var/log/storm state=directory user=storm group=storm
-    - file: path=/var/storm state=directory user=storm group=storm
+    - user: name=storm groups=storm
+    - file: path=/var/log/storm state=directory owner=storm group=storm
+    - file: path=/var/storm state=directory owner=storm group=storm
