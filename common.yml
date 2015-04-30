@@ -32,4 +32,6 @@
       lineinfile: regexp="^\s+\w+\s+requiretty" dest=/etc/sudoers state=absent
     - name: Remove require tty - alt
       lineinfile: regexp="requiretty" dest=/etc/sudoers.d/os_defaults state=absent
-  
+  tasks:
+    - cron: name="update time on reboot" special_time=reboot job="ntpdate -u galwaydcvm >/dev/null 2>&1"
+    - cron: name="update time hourly" special_time=hourly job="ntpdate -u galwaydcvm >/dev/null 2>&1"
