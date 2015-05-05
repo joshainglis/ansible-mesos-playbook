@@ -13,6 +13,7 @@
       when: ansible_os_family == "Debian"
 
     - name: set time
+      sudo: yes
       command: ntpd -q
 
     - name: Downloading and enable the EPEL repository definitions.
