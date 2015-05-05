@@ -4,21 +4,21 @@
 site "https://galaxy.ansible.com/api/v1"
 
 role "ansible-docker",
-  github: "mhamrah/ansible-docker"
+  github: "joshainglis/ansible-docker"
 role "ansible-java8",
-  github: "mhamrah/ansible-java8"
+  github: "joshainglis/ansible-java8"
 role "ansible-zookeeper",
-  github: "mhamrah/ansible-zookeeper"
+  github: "joshainglis/ansible-zookeeper"
 role "ansible-marathon",
-  github: "mhamrah/ansible-marathon"
+  github: "joshainglis/ansible-marathon"
 role "ansible-mesos",
-  github: "mhamrah/ansible-mesos"
+  github: "joshainglis/ansible-mesos"
 role "ansible-consul",
-  github: "mhamrah/ansible-consul"
+  github: "joshainglis/ansible-consul"
 role "ansible-mesos-storm",
-  github: "fullergalway/ansible-mesos-storm"
+  github: "joshainglis/ansible-mesos-storm"
 role "ansible-kafka",
-  github: "fullergalway/ansible-kafka"
+  github: "joshainglis/ansible-kafka"
 role "ansible-influxdb",
   github: "hpcloud-mon/ansible-influxdb"
 role "ansible-elasticsearch",
@@ -26,6 +26,6 @@ role "ansible-elasticsearch",
 role "ansible-logstash",
   github: "fullergalway/logstash-role"
 role "ansible-cassandra",
-  github: "fullergalway/cassandra-ansible-role"
+  github: "joshainglis/cassandra-ansible-role"
 role "ANXS.oracle-jdk",
   github: "ANXS/oracle-jdk"
