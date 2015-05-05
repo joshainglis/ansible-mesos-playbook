@@ -3,19 +3,19 @@
   sudo: yes
   tags: ['system']
   pre_tasks:
-    - name: Install Debian Packages
-      apt: pkg={{ item }} state=present update_cache=yes
-      with_items:
-        - git
-        - vim
-        - htop
-        - unzip
-      when: ansible_os_family == "Debian"
-
-    - name: set time
-      sudo: yes
-      command: ntpd -q
-
+#    - name: Install Debian Packages
+#      apt: pkg={{ item }} state=present update_cache=yes
+#      with_items:
+#        - git
+#        - vim
+#        - htop
+#        - unzip
+#      when: ansible_os_family == "Debian"
+#
+#    - name: set time
+#      sudo: yes
+#      command: ntpd -q
+#
     - name: Downloading and enable the EPEL repository definitions.
       yum: name=http://download.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm state=present
       when: ansible_os_family == "RedHat"
