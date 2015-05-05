@@ -1,6 +1,6 @@
 ---
 - hosts: [all]
-  sudo: True
+  sudo: yes
   tags: ['system']
   pre_tasks:
     - name: Install Debian Packages
