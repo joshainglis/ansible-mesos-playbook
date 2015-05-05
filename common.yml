@@ -11,12 +11,15 @@
         - htop
         - unzip
       when: ansible_os_family == "Debian"
+
     - name: set time
       command: ntpdate -u galwaydcvm
+
     - name: Downloading and enable the EPEL repository definitions.
-      yum: name=http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm state=present
+      yum: name=http://download.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm state=present
       when: ansible_os_family == "RedHat"
-    - name: Install Redhat Packages 
+
+    - name: Install Redhat Packages
       yum: pkg={{ item }} state=present
       with_items:
         - java7
@@ -25,13 +28,17 @@
         - htop
         - unzip
       when: ansible_os_family == "RedHat"
+
     - name: Disable iptables
       action: service name=iptables state=stopped enabled=false
       when: ansible_os_family == "RedHat"
+
     - name: Remove require tty
       lineinfile: regexp="^\s+\w+\s+requiretty" dest=/etc/sudoers state=absent
+
     - name: Remove require tty - alt
       lineinfile: regexp="requiretty" dest=/etc/sudoers.d/os_defaults state=absent
+
   tasks:
     - cron: name="update time on reboot" special_time=reboot job="ntpdate -u galwaydcvm >/dev/null 2>&1"
     - cron: name="update time hourly" special_time=hourly job="ntpdate -u galwaydcvm >/dev/null 2>&1"
