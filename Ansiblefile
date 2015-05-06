@@ -19,9 +19,9 @@ role "ansible-mesos-storm",
   github: "joshainglis/ansible-mesos-storm"
 role "ansible-kafka",
   github: "joshainglis/ansible-kafka"
-role "ansible-influxdb",
-  github: "joshainglis/ansible-hadoop"
 role "ansible-hadoop",
+  github: "joshainglis/ansible-hadoop"
+role "ansible-influxdb",
   github: "hpcloud-mon/ansible-influxdb"
 role "ansible-elasticsearch",
   github: "fullergalway/ansible-elasticsearch"
