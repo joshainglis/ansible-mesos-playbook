@@ -31,7 +31,11 @@
         - vim
         - htop
         - unzip
+        - python-pip
       when: ansible_os_family == "RedHat"
+
+    - name: install docker-py
+      pip: name=docker-py state=present
 
     - name: Disable iptables
       action: service name=iptables state=stopped enabled=false
