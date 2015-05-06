@@ -5,7 +5,6 @@
 #########################
 
 - hosts: elasticsearch
-  user: vagrant
   sudo: yes
 
   roles:
