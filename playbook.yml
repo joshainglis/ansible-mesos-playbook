@@ -2,9 +2,9 @@
 - include: common.yml
 - include: mesos_primaries.yml
 - include: mesos_workers.yml
-- include: storm.yml
-- include: kafka.yml
-- include: elasticsearch.yml
-- include: influxdb.yml
-- include: cassandra.yml
+#- include: storm.yml
+#- include: kafka.yml
+#- include: elasticsearch.yml
+#- include: influxdb.yml
+#- include: cassandra.yml
 

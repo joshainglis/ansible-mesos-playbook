@@ -1,0 +1,12 @@
+---
+- hosts: [nimbus]
+  sudo: True
+  roles:
+    - { role: 'ansible-hadoop', storm_nimbus_enabled: true, storm_supervisor_enabled: false, zookeeper_hosts: "{{ groups.mesos_primaries | join(':2181,') }}:2181", nimbus_host: "{{ groups.nimbus[0] }}" }
+- hosts: [mesos_workers]
+  sudo: True
+  tasks:
+    - group: name=spark
+    - user: name=spark groups=spark
+    - file: path=/var/log/spark state=directory owner=spark group=spark
+    - file: path=/var/spark state=directory owner=spark group=spark
