@@ -15,19 +15,19 @@ role "ansible-mesos",
   github: "joshainglis/ansible-mesos"
 role "ansible-consul",
   github: "joshainglis/ansible-consul"
-role "ansible-mesos-storm",
-  github: "joshainglis/ansible-mesos-storm"
-role "ansible-kafka",
-  github: "joshainglis/ansible-kafka"
-role "ansible-hadoop",
-  github: "joshainglis/ansible-hadoop"
-role "ansible-influxdb",
-  github: "hpcloud-mon/ansible-influxdb"
-role "ansible-elasticsearch",
-  github: "fullergalway/ansible-elasticsearch"
-role "ansible-logstash",
-  github: "fullergalway/logstash-role"
-role "ansible-cassandra",
-  github: "joshainglis/cassandra-ansible-role"
-role "ANXS.oracle-jdk",
-  github: "ANXS/oracle-jdk"
+#role "ansible-mesos-storm",
+#  github: "joshainglis/ansible-mesos-storm"
+#role "ansible-kafka",
+#  github: "joshainglis/ansible-kafka"
+#role "ansible-hadoop",
+#  github: "joshainglis/ansible-hadoop"
+#role "ansible-influxdb",
+#  github: "hpcloud-mon/ansible-influxdb"
+#role "ansible-elasticsearch",
+#  github: "fullergalway/ansible-elasticsearch"
+#role "ansible-logstash",
+#  github: "fullergalway/logstash-role"
+#role "ansible-cassandra",
+#  github: "joshainglis/cassandra-ansible-role"
+#role "ANXS.oracle-jdk",
+#  github: "ANXS/oracle-jdk"
