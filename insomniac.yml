@@ -1,0 +1,82 @@
+---
+- hosts: all
+  tasks:
+    - name: install gcc for twisted
+      sudo: yes
+      yum: name={{ item }} state=present
+      with_items:
+        - python-devel
+
+    - name: setup development env
+      sudo: yes
+      command: yum -y group install "Development Tools"
+
+    - name: upgrade pip
+      sudo: yes
+      pip: name=pip state=latest
+
+    - name: copy gitub public key to workstation
+      copy: src=/home/josha/gce_gh.pub dest=/home/josha/gce_gh.pub mode=0644
+
+    - name: copy gitub private key to workstation
+      copy: src=/home/josha/gce_gh dest=/home/josha/gce_gh mode=0600
+
+    - name: remove old repos (insomniac)
+      sudo: yes
+      file: path=/home/josha/insomniac state=absent
+
+    - name: remove old repos (insomniac-demo)
+      sudo: yes
+      file: path=/home/josha/insomniac-demo state=absent
+
+    - name: remove old repos (insomniac)
+      sudo: yes
+      file: path=/home/josha/insomniac.tar state=absent
+
+    - name: remove old repos (insomniac-demo)
+      sudo: yes
+      file: path=/home/josha/insomniac-demo.tar state=absent
+
+    - name: copy insomniac
+      copy: src=/home/josha/insomniac.tar dest=/home/josha/insomniac.tar
+
+    - name: copy insomniac
+      copy: src=/home/josha/insomniac-demo.tar dest=/home/josha/insomniac-demo.tar
+
+    - name: untar insomniac
+      unarchive: src=/home/josha/insomniac.tar dest=/home/josha
+
+    - name: cleanup pathname
+      command: 'find ~/ -maxdepth 1 -type d -name "iixlabs-insomniac-*" -exec mv {} insomniac \;'
+
+    - name: untar demo
+      unarchive: src=/home/josha/insomniac-demo.tar dest=/home/josha
+
+    - name: cleanup pathname
+      command: 'find ~/ -maxdepth 1 -type d -name "iixlabs-insomniac-demo-*" -exec mv {} insomniac-demo \;'
+
+    - name: ensure insomniac-demo is not installed in pip
+      sudo: yes
+      pip: name=insomniac state=absent
+      ignore_errors: yes
+
+    - name: ensure insomniac-demo is not installed in pip
+      sudo: yes
+      pip: name=insomniac-demo state=absent
+      ignore_errors: yes
+
+    - name: install insomniac dependencies
+      sudo: yes
+      pip: requirements=/home/josha/insomniac/requirements.txt
+
+    - name: install insomniac
+      sudo: yes
+      command: python setup.py install
+      args:
+        chdir: /home/josha/insomniac
+
+    - name: install insomniac demo
+      sudo: yes
+      command: python setup.py install
+      args:
+        chdir: /home/josha/insomniac-demo
